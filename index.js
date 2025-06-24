@@ -66,8 +66,8 @@ const {
   
   //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-const sessdata = config.SESSION_ID.replace("CHAMA-MD=zJ1ACTKS#EK95my8ThE0A9m4JoJXfzxhS_2t5tgxFDQVR9ZIT6H8", '');
+if(!config.SESSION_ID) return console.log('CHAMA-MD=zJ1ACTKS#EK95my8ThE0A9m4JoJXfzxhS_2t5tgxFDQVR9ZIT6H8')
+const sessdata = config.SESSION_ID.replace("CHAMA-MD=", '');
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
@@ -114,7 +114,7 @@ const port = process.env.PORT || 9090;
   
   let up = `*Hello there CHAMA-MD User! \ud83d\udc4b\ud83c\udffb* \n\n> Simple , Straight Forward But Loaded With Features \ud83c\udf8a, Meet CHAMA-MD WhatsApp Bot.\n\n *Thanks for using CHAMA-MD \ud83d\udea9* \n\n> Join WhatsApp Channel :- ⤵️\n \nhttps://whatsapp.com/channel/0029Vb5OiseHltY10IBkF112\n\n- *YOUR PREFIX:* = ${prefix}\n\nDont forget to give star to repo ⬇️\n\nhttps://github.com/CHMA2009/CHAMA-MD\n\n> © Powered BY 🄲🄷🄰🄼🄸🄽🄳🅄 \ud83d\udda4`;
     conn.sendMessage(conn.user.id, { image: { url: `https://i.ibb.co/KxYGBGdf/8947.jpg` }, caption: up })
-  }
+  }y
   })
   conn.ev.on('creds.update', saveCreds)
 
